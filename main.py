@@ -9,8 +9,19 @@ def random_card_generator(c):
 def hit_function(total_number,random):
     return total_number + random
 
-def stand_function(number,random):
-    return number+random
+def stand_function(number,random,total_users_card):
+    total_dealer_cards = number+random
+    if total_users_card > total_dealer_cards:
+        print("you min")
+    elif total_users_card < total_dealer_cards:
+        print("house wins")
+    elif total_users_card == total_dealer_cards:
+        return total_dealer_cards
+
+def checker_function(total_user_card,total_dealer_card):
+    if total_user_card > total_dealer_card:
+        print("")
+
 
 cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 users_cards1 = random_card_generator(cards)
